@@ -47,5 +47,14 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
 
       // submit project details
     });
+
+    on<DeleteTransaction>((event, emit) async {
+      final transactionlist =
+          await tranScationDBSevice.deleteTranScation(event.transactionid);
+
+      // emit(state.copyWith(flSpot: flSpotList));
+
+      // submit project details
+    });
   }
 }

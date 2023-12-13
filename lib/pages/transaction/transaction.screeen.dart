@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -6,6 +8,7 @@ import 'package:money_manager/bloc/transaction/transaction_bloc.dart';
 import 'package:money_manager/model/catagory.model/catagory.model.dart';
 import 'package:money_manager/model/transaction.model/transaction.model.dart';
 import 'package:money_manager/utils/appfont.dart';
+import 'package:money_manager/utils/logout.dialoge.dart';
 import 'package:money_manager/utils/space.dart';
 import 'package:money_manager/utils/validators.utils.dart';
 
@@ -49,33 +52,46 @@ class _TranSactionScreeenState extends State<TranSactionScreeen> {
                     shrinkWrap: true,
                     itemCount: filteredTransactions?.length ?? 0,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        leading: Container(
-                          decoration:
-                              const BoxDecoration(shape: BoxShape.circle),
-                          child: SvgPicture.asset(
-                            filteredTransactions?[index].catagoryModel.images ??
-                                "",
-                            height: 50,
-                            width: 50,
-                            fit: BoxFit.cover,
+                      return Dismissible(
+                        background: Container(color: Colors.red),
+                        key: Key(state.transactionList[index].id ?? ""),
+                        onDismissed: (direction) {},
+                        confirmDismiss: (direction) async {
+                          var a = conformDelete(
+                              context, state.transactionList[index].id ?? "");
+                          log(a.toString());
+                          return a;
+                        },
+                        child: ListTile(
+                          leading: Container(
+                            decoration:
+                                const BoxDecoration(shape: BoxShape.circle),
+                            child: SvgPicture.asset(
+                              filteredTransactions?[index]
+                                      .catagoryModel
+                                      .images ??
+                                  "",
+                              height: 50,
+                              width: 50,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                        trailing: Text(
-                          "${filteredTransactions?[index].catagoryType == CatagoryType.income ? "+" : "-"} ₹ ${filteredTransactions?[index].amount.toString()}",
-                          style: AppTextStyle.nunito16w600.copyWith(
-                              color:
-                                  filteredTransactions?[index].catagoryType ==
-                                          CatagoryType.income
-                                      ? Colors.green
-                                      : Colors.red),
-                        ),
-                        subtitle: Text(DateFormat.yMMMd()
-                            .format(filteredTransactions![index].date)),
-                        title: Text(
-                          capitalize(
-                              filteredTransactions[index].catagoryModel.name),
-                          style: AppTextStyle.nunito18w700,
+                          trailing: Text(
+                            "${filteredTransactions?[index].catagoryType == CatagoryType.income ? "+" : "-"} ₹ ${filteredTransactions?[index].amount.toString()}",
+                            style: AppTextStyle.nunito16w600.copyWith(
+                                color:
+                                    filteredTransactions?[index].catagoryType ==
+                                            CatagoryType.income
+                                        ? Colors.green
+                                        : Colors.red),
+                          ),
+                          subtitle: Text(DateFormat.yMMMd()
+                              .format(filteredTransactions![index].date)),
+                          title: Text(
+                            capitalize(
+                                filteredTransactions[index].catagoryModel.name),
+                            style: AppTextStyle.nunito18w700,
+                          ),
                         ),
                       );
                     },

@@ -46,9 +46,11 @@ class TranScation implements TranScationDBSevice {
   }
 
   @override
-  Future<List<TransactionModel>> deleteTranScation(String transactionid) {
-    // TODO: implement deleteTranScation
-    throw UnimplementedError();
+  Future<List<TransactionModel>> deleteTranScation(String transactionid) async {
+    var transactionDB = await Hive.openBox<TransactionModel>("transaction_db");
+
+    transactionDB.delete(transactionid);
+    return transactionDB.values.toList().reversed.toList();
   }
 
   @override

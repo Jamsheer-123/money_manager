@@ -17,4 +17,7 @@ class TransactionEvent with _$TransactionEvent {
       {required TransactionModel transcationModel}) = AddTranScation;
 
   factory TransactionEvent.getGraph() = GetGraph;
+
+  factory TransactionEvent.delelteTransaction({required String transactionid}) =
+      DeleteTransaction;
 }

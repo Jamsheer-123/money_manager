@@ -39,7 +39,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     tabIndex: postionNotifier.value,
                     index: 1,
                     icon: postionNotifier.value == 1
-                        ? "assets/svg/transactionbold.svg"
+                        ? "assets/svg/transaction.svg"
                         : "assets/svg/search.svg",
                     label: "Projects",
                   ),

@@ -24,6 +24,7 @@ mixin _$TransactionEvent {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$TransactionEvent {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$TransactionEvent {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$TransactionEvent {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$TransactionEvent {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$TransactionEvent {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -142,6 +148,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return chageCatgory();
   }
@@ -155,6 +162,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return chageCatgory?.call();
   }
@@ -168,6 +176,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (chageCatgory != null) {
@@ -185,6 +194,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return chageCatgory(this);
   }
@@ -198,6 +208,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return chageCatgory?.call(this);
   }
@@ -211,6 +222,7 @@ class _$ChangeCatagoryImpl implements ChangeCatagory {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (chageCatgory != null) {
@@ -295,6 +307,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return selectCatgory(catagoryModel);
   }
@@ -308,6 +321,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return selectCatgory?.call(catagoryModel);
   }
@@ -321,6 +335,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (selectCatgory != null) {
@@ -338,6 +353,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return selectCatgory(this);
   }
@@ -351,6 +367,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return selectCatgory?.call(this);
   }
@@ -364,6 +381,7 @@ class _$SelectCatgoryImpl implements SelectCatgory {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (selectCatgory != null) {
@@ -427,6 +445,7 @@ class _$GetTranscationImpl implements GetTranscation {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return getTranScation();
   }
@@ -440,6 +459,7 @@ class _$GetTranscationImpl implements GetTranscation {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return getTranScation?.call();
   }
@@ -453,6 +473,7 @@ class _$GetTranscationImpl implements GetTranscation {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (getTranScation != null) {
@@ -470,6 +491,7 @@ class _$GetTranscationImpl implements GetTranscation {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return getTranScation(this);
   }
@@ -483,6 +505,7 @@ class _$GetTranscationImpl implements GetTranscation {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return getTranScation?.call(this);
   }
@@ -496,6 +519,7 @@ class _$GetTranscationImpl implements GetTranscation {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (getTranScation != null) {
@@ -579,6 +603,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return pickEndDates(context);
   }
@@ -592,6 +617,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return pickEndDates?.call(context);
   }
@@ -605,6 +631,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (pickEndDates != null) {
@@ -622,6 +649,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return pickEndDates(this);
   }
@@ -635,6 +663,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return pickEndDates?.call(this);
   }
@@ -648,6 +677,7 @@ class _$PickDateEventImpl implements PickDateEvent {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (pickEndDates != null) {
@@ -739,6 +769,7 @@ class _$AddTranScationImpl implements AddTranScation {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return addTranScation(transcationModel);
   }
@@ -752,6 +783,7 @@ class _$AddTranScationImpl implements AddTranScation {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return addTranScation?.call(transcationModel);
   }
@@ -765,6 +797,7 @@ class _$AddTranScationImpl implements AddTranScation {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (addTranScation != null) {
@@ -782,6 +815,7 @@ class _$AddTranScationImpl implements AddTranScation {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return addTranScation(this);
   }
@@ -795,6 +829,7 @@ class _$AddTranScationImpl implements AddTranScation {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return addTranScation?.call(this);
   }
@@ -808,6 +843,7 @@ class _$AddTranScationImpl implements AddTranScation {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (addTranScation != null) {
@@ -871,6 +907,7 @@ class _$GetGraphImpl implements GetGraph {
     required TResult Function(BuildContext context) pickEndDates,
     required TResult Function(TransactionModel transcationModel) addTranScation,
     required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
   }) {
     return getGraph();
   }
@@ -884,6 +921,7 @@ class _$GetGraphImpl implements GetGraph {
     TResult? Function(BuildContext context)? pickEndDates,
     TResult? Function(TransactionModel transcationModel)? addTranScation,
     TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
   }) {
     return getGraph?.call();
   }
@@ -897,6 +935,7 @@ class _$GetGraphImpl implements GetGraph {
     TResult Function(BuildContext context)? pickEndDates,
     TResult Function(TransactionModel transcationModel)? addTranScation,
     TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (getGraph != null) {
@@ -914,6 +953,7 @@ class _$GetGraphImpl implements GetGraph {
     required TResult Function(PickDateEvent value) pickEndDates,
     required TResult Function(AddTranScation value) addTranScation,
     required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
   }) {
     return getGraph(this);
   }
@@ -927,6 +967,7 @@ class _$GetGraphImpl implements GetGraph {
     TResult? Function(PickDateEvent value)? pickEndDates,
     TResult? Function(AddTranScation value)? addTranScation,
     TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
   }) {
     return getGraph?.call(this);
   }
@@ -940,6 +981,7 @@ class _$GetGraphImpl implements GetGraph {
     TResult Function(PickDateEvent value)? pickEndDates,
     TResult Function(AddTranScation value)? addTranScation,
     TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
     required TResult orElse(),
   }) {
     if (getGraph != null) {
@@ -951,6 +993,172 @@ class _$GetGraphImpl implements GetGraph {
 
 abstract class GetGraph implements TransactionEvent {
   factory GetGraph() = _$GetGraphImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteTransactionImplCopyWith<$Res> {
+  factory _$$DeleteTransactionImplCopyWith(_$DeleteTransactionImpl value,
+          $Res Function(_$DeleteTransactionImpl) then) =
+      __$$DeleteTransactionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String transactionid});
+}
+
+/// @nodoc
+class __$$DeleteTransactionImplCopyWithImpl<$Res>
+    extends _$TransactionEventCopyWithImpl<$Res, _$DeleteTransactionImpl>
+    implements _$$DeleteTransactionImplCopyWith<$Res> {
+  __$$DeleteTransactionImplCopyWithImpl(_$DeleteTransactionImpl _value,
+      $Res Function(_$DeleteTransactionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? transactionid = null,
+  }) {
+    return _then(_$DeleteTransactionImpl(
+      transactionid: null == transactionid
+          ? _value.transactionid
+          : transactionid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteTransactionImpl implements DeleteTransaction {
+  _$DeleteTransactionImpl({required this.transactionid});
+
+  @override
+  final String transactionid;
+
+  @override
+  String toString() {
+    return 'TransactionEvent.delelteTransaction(transactionid: $transactionid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTransactionImpl &&
+            (identical(other.transactionid, transactionid) ||
+                other.transactionid == transactionid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, transactionid);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteTransactionImplCopyWith<_$DeleteTransactionImpl> get copyWith =>
+      __$$DeleteTransactionImplCopyWithImpl<_$DeleteTransactionImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() chageCatgory,
+    required TResult Function(CatagoryModel catagoryModel) selectCatgory,
+    required TResult Function() getTranScation,
+    required TResult Function(BuildContext context) pickEndDates,
+    required TResult Function(TransactionModel transcationModel) addTranScation,
+    required TResult Function() getGraph,
+    required TResult Function(String transactionid) delelteTransaction,
+  }) {
+    return delelteTransaction(transactionid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? chageCatgory,
+    TResult? Function(CatagoryModel catagoryModel)? selectCatgory,
+    TResult? Function()? getTranScation,
+    TResult? Function(BuildContext context)? pickEndDates,
+    TResult? Function(TransactionModel transcationModel)? addTranScation,
+    TResult? Function()? getGraph,
+    TResult? Function(String transactionid)? delelteTransaction,
+  }) {
+    return delelteTransaction?.call(transactionid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chageCatgory,
+    TResult Function(CatagoryModel catagoryModel)? selectCatgory,
+    TResult Function()? getTranScation,
+    TResult Function(BuildContext context)? pickEndDates,
+    TResult Function(TransactionModel transcationModel)? addTranScation,
+    TResult Function()? getGraph,
+    TResult Function(String transactionid)? delelteTransaction,
+    required TResult orElse(),
+  }) {
+    if (delelteTransaction != null) {
+      return delelteTransaction(transactionid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChangeCatagory value) chageCatgory,
+    required TResult Function(SelectCatgory value) selectCatgory,
+    required TResult Function(GetTranscation value) getTranScation,
+    required TResult Function(PickDateEvent value) pickEndDates,
+    required TResult Function(AddTranScation value) addTranScation,
+    required TResult Function(GetGraph value) getGraph,
+    required TResult Function(DeleteTransaction value) delelteTransaction,
+  }) {
+    return delelteTransaction(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChangeCatagory value)? chageCatgory,
+    TResult? Function(SelectCatgory value)? selectCatgory,
+    TResult? Function(GetTranscation value)? getTranScation,
+    TResult? Function(PickDateEvent value)? pickEndDates,
+    TResult? Function(AddTranScation value)? addTranScation,
+    TResult? Function(GetGraph value)? getGraph,
+    TResult? Function(DeleteTransaction value)? delelteTransaction,
+  }) {
+    return delelteTransaction?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChangeCatagory value)? chageCatgory,
+    TResult Function(SelectCatgory value)? selectCatgory,
+    TResult Function(GetTranscation value)? getTranScation,
+    TResult Function(PickDateEvent value)? pickEndDates,
+    TResult Function(AddTranScation value)? addTranScation,
+    TResult Function(GetGraph value)? getGraph,
+    TResult Function(DeleteTransaction value)? delelteTransaction,
+    required TResult orElse(),
+  }) {
+    if (delelteTransaction != null) {
+      return delelteTransaction(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteTransaction implements TransactionEvent {
+  factory DeleteTransaction({required final String transactionid}) =
+      _$DeleteTransactionImpl;
+
+  String get transactionid;
+  @JsonKey(ignore: true)
+  _$$DeleteTransactionImplCopyWith<_$DeleteTransactionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
