@@ -3,14 +3,18 @@ import 'package:money_manager/pages/create.transaction/component/datepickerwideg
 import 'package:money_manager/utils/space.dart';
 
 class DateWidget extends StatelessWidget {
-  const DateWidget({
-    super.key,
-    required this.startDate,
-    required this.endDate,
-  });
-
   final DateTime? startDate;
   final DateTime? endDate;
+  final VoidCallback onStartDateSelected;
+  final VoidCallback onEndDateSelected;
+
+  const DateWidget({
+    Key? key,
+    required this.startDate,
+    required this.endDate,
+    required this.onStartDateSelected,
+    required this.onEndDateSelected,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,28 +23,22 @@ class DateWidget extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: DatepickerWidegt2(
-            selctedDate: startDate,
-            hinttext: 'Start Date',
+              child: InkWell(
+            onTap: onStartDateSelected,
+            child: DatepickerWidegt2(
+              selctedDate: startDate,
+              hinttext: 'Start Date',
+            ),
           )),
           horizontalSpace(10),
           Expanded(
-              child: DatepickerWidegt2(
-            selctedDate: endDate,
-            hinttext: 'End Date',
+              child: InkWell(
+            onTap: onEndDateSelected,
+            child: DatepickerWidegt2(
+              selctedDate: endDate,
+              hinttext: 'End Date',
+            ),
           )),
-          // ElevatedButton(
-          //   onPressed: () => _selectStartDate(context),
-          //   child: Text(startDate != null
-          //       ? "Start Date: ${startDate!.toLocal()}".split(' ')[0]
-          //       : "Select Start Date"),
-          // ),
-          // ElevatedButton(
-          //   onPressed: () => _selectEndDate(context),
-          //   child: Text(endDate != null
-          //       ? "End Date: ${endDate!.toLocal()}".split(' ')[0]
-          //       : "Select End Date"),
-          // ),
         ],
       ),
     );

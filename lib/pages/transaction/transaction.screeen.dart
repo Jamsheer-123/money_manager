@@ -38,10 +38,14 @@ class _TranSactionScreeenState extends State<TranSactionScreeen> {
             return Column(
               children: [
                 verticalSpace(5),
-                DateWidget(startDate: startDate, endDate: endDate),
+                DateWidget(
+                  startDate: startDate,
+                  endDate: endDate,
+                  onStartDateSelected: () => _selectStartDate(context),
+                  onEndDateSelected: () => _selectEndDate(context),
+                ),
                 Expanded(
                   child: ListView.builder(
-                    reverse: true,
                     shrinkWrap: true,
                     itemCount: filteredTransactions?.length ?? 0,
                     itemBuilder: (BuildContext context, int index) {
@@ -109,8 +113,10 @@ class _TranSactionScreeenState extends State<TranSactionScreeen> {
     );
 
     if (picked != null && picked != startDate) {
+      DateTime selectedStartDate = picked.subtract(const Duration(seconds: 1));
+
       setState(() {
-        startDate = picked;
+        startDate = selectedStartDate;
       });
     }
   }
@@ -124,6 +130,8 @@ class _TranSactionScreeenState extends State<TranSactionScreeen> {
     );
 
     if (picked != null && picked != endDate) {
+      DateTime selectedStartDate = picked.add(const Duration(seconds: 1));
+
       setState(() {
         endDate = picked;
       });
