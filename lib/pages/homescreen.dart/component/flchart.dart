@@ -9,14 +9,14 @@
 // import 'package:money_manager/pages/homescreen.dart/component/q.dart';
 // import 'package:money_manager/utils/appcolors.dart';
 
-// class PPP extends StatefulWidget {
-//   const PPP({super.key});
+// class FLChart extends StatefulWidget {
+//   const FLChart({super.key});
 
 //   @override
-//   State<PPP> createState() => _PPPState();
+//   State<FLChart> createState() => _FLChartState();
 // }
 
-// class _PPPState extends State<PPP> {
+// class _FLChartState extends State<FLChart> {
 //   List<Color> gradientColors = [
 //     AppColors.contentColorCyan,
 //     AppColors.contentColorBlue,
@@ -221,14 +221,14 @@ import 'package:money_manager/model/catagory.model/catagory.model.dart';
 import 'package:money_manager/model/transaction.model/transaction.model.dart';
 import 'package:money_manager/utils/appcolors.dart';
 
-class PPP extends StatefulWidget {
-  const PPP({Key? key}) : super(key: key);
+class FLChart extends StatefulWidget {
+  const FLChart({Key? key}) : super(key: key);
 
   @override
-  State<PPP> createState() => _PPPState();
+  State<FLChart> createState() => _FLChartState();
 }
 
-class _PPPState extends State<PPP> {
+class _FLChartState extends State<FLChart> {
   List<Color> gradientColors = [
     AppColors.contentColorCyan,
     AppColors.contentColorBlue,

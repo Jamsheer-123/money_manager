@@ -46,12 +46,12 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                   TabBar(
                     controller: _tabController,
+                    splashBorderRadius: BorderRadius.zero,
                     indicatorSize: TabBarIndicatorSize.tab,
-                    indicatorColor: Colors.white,
+                    indicatorColor: Colors.black,
                     dividerColor: Colors.transparent,
-                    labelColor: Colors.white,
-                    unselectedLabelColor:
-                        const Color.fromARGB(255, 223, 221, 221),
+                    labelColor: Colors.black,
+                    unselectedLabelColor: Colors.grey,
                     tabs: const [
                       Tab(
                         child: Text("BALANCE"),

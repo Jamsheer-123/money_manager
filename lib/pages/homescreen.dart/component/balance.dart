@@ -21,19 +21,19 @@ class BalanceComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               verticalSpace(20),
               Text(
                 "Total Balance",
-                style: AppTextStyle.popin15W400
-                    .copyWith(color: const Color.fromARGB(255, 227, 223, 223)),
+                style: AppTextStyle.popin15W400.copyWith(color: Colors.black),
               ),
               Row(
                 children: [
                   BlocBuilder<TransactionBloc, TransactionState>(
                     builder: (context, state) {
                       double resultBalance =
-                          calculateBalance(state.transactionList!);
+                          calculateBalance(state.transactionList);
 
                       return Text(
                         "$resultBalance",
@@ -55,67 +55,7 @@ class BalanceComponent extends StatelessWidget {
           ),
         ),
         //  const LineChartSample2(),
-        const PPP()
-
-        // Expanded(
-        //   child: Container(
-        //     padding: const EdgeInsets.symmetric(horizontal: 10),
-        //     decoration: const BoxDecoration(
-        //         borderRadius: BorderRadius.only(
-        //             topLeft: Radius.circular(13),
-        //             topRight: Radius.circular(13)),
-        //         color: Colors.white),
-        //     child: Column(
-        //       children: [
-        //         verticalSpace(10),
-        //         Row(
-        //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //           children: [
-        //             Text(
-        //               "Recent Transaction",
-        //               style: AppTextStyle.nunito16w600,
-        //             ),
-        //             Text(
-        //               "See All",
-        //               style: AppTextStyle.nunito16w600,
-        //             )
-        //           ],
-        //         ),
-        //         BlocBuilder<TransactionBloc, TransactionState>(
-        //           builder: (context, state) {
-        //             print({state.transactionList}.toString());
-        //             return Expanded(
-        //               child: ListView.builder(
-        //                 shrinkWrap: true,
-        //                 itemCount: state.transactionList?.length ?? 0,
-        //                 itemBuilder: (BuildContext context, int index) {
-        //                   return ListTile(
-        //                     leading: Container(
-        //                       decoration:
-        //                           const BoxDecoration(shape: BoxShape.circle),
-        //                       child: SvgPicture.asset(
-        //                           state.transactionList?[index].catagoryModel
-        //                                   .images ??
-        //                               "",
-        //                           height: 50,
-        //                           width: 50,
-        //                           // "assets/catagorysvg/amazon-prime-video.svg",
-        //                           fit: BoxFit.cover),
-        //                     ),
-        //                     trailing: Text(state.transactionList![index].amount
-        //                         .toString()),
-        //                     title: Text(state.transactionList![index]
-        //                         .catagoryModel.categoryField.name),
-        //                   );
-        //                 },
-        //               ),
-        //             );
-        //           },
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // )
+        const FLChart()
       ],
     );
   }

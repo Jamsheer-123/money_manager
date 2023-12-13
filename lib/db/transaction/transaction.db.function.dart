@@ -5,7 +5,6 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:money_manager/model/catagory.model/catagory.model.dart';
 import 'package:money_manager/model/transaction.model/transaction.model.dart';
-import 'package:money_manager/pages/homescreen.dart/component/q.dart';
 
 abstract class TranScationDBSevice {
   Future<List<TransactionModel>> getTranScation();
@@ -78,11 +77,6 @@ class TranScation implements TranScationDBSevice {
       balanceSpots.add(FlSpot(i.toDouble(), balance / 10));
     }
 
-    double maxX = last90DaysTransactions.length.toDouble();
-
-    // Calculate maxY for the y-axis
-    double maxY = calculateMaxY(last90DaysTransactions);
-    double minY = -maxY * 1.1; // Ensure minY is negative for expenses
     log("----------end------>>");
     return balanceSpots;
   }
