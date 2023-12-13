@@ -26,7 +26,7 @@ class TranScation implements TranScationDBSevice {
     // Sort the list by date in descending order (you can change to ascending order if needed)
     transactions.sort((a, b) => a.date.compareTo(b.date));
 
-    return transactions;
+    return transactions.reversed.toList();
   }
 
   @override
@@ -38,7 +38,7 @@ class TranScation implements TranScationDBSevice {
       await transactionDB.put(transactionModel.id, transactionModel);
       catagoryList.clear;
 
-      return transactionDB.values.toList();
+      return transactionDB.values.toList().reversed.toList();
     } catch (e) {
       log(e.toString());
       throw (e.toString());
