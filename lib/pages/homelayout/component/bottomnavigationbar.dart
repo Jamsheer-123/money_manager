@@ -39,8 +39,8 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     tabIndex: postionNotifier.value,
                     index: 1,
                     icon: postionNotifier.value == 1
-                        ? "assets/svg/transaction.svg"
-                        : "assets/svg/search.svg",
+                        ? "assets/svg/transactionbold.svg"
+                        : "assets/svg/transaction.svg",
                     label: "Projects",
                   ),
                   AddButton(
@@ -52,7 +52,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     tabIndex: postionNotifier.value,
                     index: 2,
                     icon: postionNotifier.value == 2
-                        ? "assets/svg/message.bold.svg"
+                        ? "assets/svg/calculator-bold.svg"
                         : "assets/svg/Calculator.svg",
                     label: "Message",
                   ),
