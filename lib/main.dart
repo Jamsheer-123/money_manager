@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +8,7 @@ import 'package:money_manager/domain/injectable.dart';
 import 'package:money_manager/model/catagory.model/catagory.model.dart';
 import 'package:money_manager/model/transaction.model/transaction.model.dart';
 import 'package:money_manager/pages/homelayout/homelayout.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pages/create.transaction/create.transaction.dart';
 
@@ -33,11 +32,19 @@ Future<void> main() async {
   if (!Hive.isAdapterRegistered(CategoryFieldAdapter().typeId)) {
     Hive.registerAdapter(CategoryFieldAdapter());
   }
-  final catagoryDB = await Hive.openBox<CatagoryModel>("catagorymodeldb");
+  bool isInitialized = await SharedPreferences.getInstance()
+      .then((prefs) => prefs.getBool('isInitialized') ?? false);
 
-  for (var category in initialCategories) {
-    log("34567890-=");
-    await catagoryDB.put(category.id, category);
+  if (!isInitialized) {
+    final catagoryDB = await Hive.openBox<CatagoryModel>("catagorymodeldb");
+
+    for (var category in initialCategories) {
+      await catagoryDB.put(category.id, category);
+    }
+
+    // Set the flag to indicate that initialization has been done
+    await SharedPreferences.getInstance()
+        .then((prefs) => prefs.setBool('isInitialized', true));
   }
   runApp(const MyApp());
 }
@@ -57,6 +64,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

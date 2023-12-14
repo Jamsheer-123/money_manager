@@ -119,6 +119,8 @@ class CategoryFieldAdapter extends TypeAdapter<CategoryField> {
         return CategoryField.cloth;
       case 9:
         return CategoryField.salary;
+      case 10:
+        return CategoryField.loan;
       default:
         return CategoryField.fuel;
     }
@@ -153,6 +155,9 @@ class CategoryFieldAdapter extends TypeAdapter<CategoryField> {
         break;
       case CategoryField.salary:
         writer.writeByte(9);
+        break;
+      case CategoryField.loan:
+        writer.writeByte(10);
         break;
     }
   }
