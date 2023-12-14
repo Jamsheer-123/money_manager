@@ -44,31 +44,29 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       backgroundColor: Colors.white38,
       body: Column(
         children: <Widget>[
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    userInput,
-                    style: const TextStyle(fontSize: 18, color: Colors.black),
-                  ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.all(20),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  userInput,
+                  style: const TextStyle(fontSize: 18, color: Colors.black),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(15),
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    answer,
-                    style: const TextStyle(
-                        fontSize: 30,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(15),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  answer,
+                  style: const TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Expanded(
             flex: 4,
@@ -81,12 +79,15 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               itemBuilder: (BuildContext context, int index) {
                 return MyButton(
                   buttonText: buttons[index],
-                  onTap: () => onButtonTap(buttons[index]),
+                  onTap: () => onButtonTap(
+                    buttons[index],
+                  ),
                   color: isOperator(buttons[index])
                       ? Colors.blueAccent
                       : Colors.white,
                   textColor:
                       isOperator(buttons[index]) ? Colors.white : Colors.black,
+                  onLongPress: () => onLongTap(buttons[index]),
                 );
               },
             ),
@@ -104,9 +105,21 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       } else if (buttonText == '=') {
         equalPressed();
       } else if (buttonText == 'DEL') {
-        userInput = userInput.substring(0, userInput.length - 1);
+        if (userInput.isNotEmpty) {
+          userInput = userInput.substring(0, userInput.length - 1);
+        }
       } else {
         userInput += buttonText;
+      }
+    });
+  }
+
+  void onLongTap(String buttonText) {
+    setState(() {
+      if (buttonText == 'DEL') {
+        if (userInput.isNotEmpty) {
+          userInput = "";
+        }
       }
     });
   }
@@ -133,6 +146,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
 class MyButton extends StatelessWidget {
   final String buttonText;
   final VoidCallback onTap;
+  final VoidCallback onLongPress;
   final Color color;
   final Color textColor;
 
@@ -142,12 +156,14 @@ class MyButton extends StatelessWidget {
     required this.onTap,
     required this.color,
     required this.textColor,
+    required this.onLongPress,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      onLongPress: onLongPress,
       child: Container(
         width: double.infinity,
         height: MediaQuery.sizeOf(context).height / 0.6,
