@@ -49,7 +49,6 @@ class DatepickerWidegt extends StatelessWidget {
               ],
             )
           ]),
-          SvgPicture.asset("assets/svg/arrow_downbold.svg"),
         ],
       ),
     );
