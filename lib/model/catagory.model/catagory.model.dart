@@ -68,6 +68,8 @@ enum CategoryField {
 
   @HiveField(9)
   salary,
+  @HiveField(10)
+  loan,
 }
 
 List<CatagoryModel> initialCategories = [
@@ -108,7 +110,7 @@ List<CatagoryModel> initialCategories = [
   ),
   CatagoryModel(
     images: emi,
-    categoryField: CategoryField.fuel,
+    categoryField: CategoryField.loan,
     name: 'EMI',
     id: '6',
     catagoryType: CatagoryType.expense,
@@ -121,18 +123,25 @@ List<CatagoryModel> initialCategories = [
     catagoryType: CatagoryType.expense,
   ),
   CatagoryModel(
-    images: netflix,
-    categoryField: CategoryField.entertainment,
-    name: 'Netflix',
+    images: bus,
+    categoryField: CategoryField.travel,
+    name: 'Bus',
     id: '8',
-    catagoryType: CatagoryType.income,
+    catagoryType: CatagoryType.expense,
   ),
   CatagoryModel(
-    images: amazon,
-    categoryField: CategoryField.entertainment,
-    name: 'Amazone Prime',
+    images: train,
+    categoryField: CategoryField.travel,
+    name: 'Train',
     id: '9',
-    catagoryType: CatagoryType.income,
+    catagoryType: CatagoryType.expense,
+  ),
+  CatagoryModel(
+    images: flight,
+    categoryField: CategoryField.travel,
+    name: 'Flight',
+    id: '109',
+    catagoryType: CatagoryType.expense,
   ),
 
   // Add more categories as needed
