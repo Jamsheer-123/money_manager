@@ -50,17 +50,32 @@ class TabBarViewComponet extends StatelessWidget {
                                                   .spefieldCatagoryListexpense![
                                               index]));
                                 },
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                      shape: BoxShape.circle),
-                                  child: SvgPicture.asset(
-                                      catagoryblocState
-                                          .spefieldCatagoryListexpense![index]
-                                          .images,
-                                      height: 60,
-                                      width: 60,
-                                      // "assets/catagorysvg/amazon-prime-video.svg",
-                                      fit: BoxFit.cover),
+                                child: BlocBuilder<TransactionBloc,
+                                    TransactionState>(
+                                  builder: (context, state) {
+                                    return Container(
+                                      padding: const EdgeInsets.all(5),
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                              width: 3,
+                                              color: state.selectedCatgroyModel ==
+                                                      catagoryblocState
+                                                              .spefieldCatagoryListexpense![
+                                                          index]
+                                                  ? Colors.green
+                                                  : Colors.transparent)),
+                                      child: SvgPicture.asset(
+                                          catagoryblocState
+                                              .spefieldCatagoryListexpense![
+                                                  index]
+                                              .images,
+                                          height: 60,
+                                          width: 60,
+                                          // "assets/catagorysvg/amazon-prime-video.svg",
+                                          fit: BoxFit.cover),
+                                    );
+                                  },
                                 ),
                               ),
                               Text(
@@ -97,8 +112,17 @@ class TabBarViewComponet extends StatelessWidget {
                                             .specfiedcatgroyListicome![index]));
                               },
                               child: Container(
-                                decoration:
-                                    const BoxDecoration(shape: BoxShape.circle),
+                                padding: const EdgeInsets.all(5),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                        width: 3,
+                                        color: state.selectedCatgroyModel ==
+                                                catagoryblocState
+                                                        .specfiedcatgroyListicome![
+                                                    index]
+                                            ? Colors.green
+                                            : Colors.transparent)),
                                 child: SvgPicture.asset(
                                     catagoryblocState
                                         .specfiedcatgroyListicome![index]
@@ -106,7 +130,7 @@ class TabBarViewComponet extends StatelessWidget {
                                     height: 50,
                                     width: 50,
                                     // "assets/catagorysvg/amazon-prime-video.svg",
-                                    fit: BoxFit.fill),
+                                    fit: BoxFit.contain),
                               ),
                             );
                           },
