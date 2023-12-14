@@ -50,14 +50,13 @@ class TranScation implements TranScationDBSevice {
     var transactionDB = await Hive.openBox<TransactionModel>("transaction_db");
 
     transactionDB.delete(transactionid);
-    return transactionDB.values.toList().reversed.toList();
+    return transactionDB.values.toList();
   }
 
   @override
   Future<List<FlSpot>> graphList() async {
     final transactionDB =
         await Hive.openBox<TransactionModel>("transaction_db");
-    log("----------start------>>");
     DateTime currentDate = DateTime.now();
     DateTime startDate = currentDate.subtract(const Duration(days: 90));
 

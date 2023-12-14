@@ -253,7 +253,7 @@ class _FLChartState extends State<FLChart> {
                 log("----------start------>>");
                 DateTime currentDate = DateTime.now();
                 DateTime startDate =
-                    currentDate.subtract(const Duration(days: 90));
+                    currentDate.subtract(const Duration(days: 90, seconds: 1));
 
                 List<TransactionModel> last90DaysTransactions = state
                     .transactionList
@@ -261,6 +261,7 @@ class _FLChartState extends State<FLChart> {
                         transaction.date.isAfter(startDate) &&
                         transaction.date.isBefore(currentDate))
                     .toList();
+                last90DaysTransactions.sort((a, b) => a.date.compareTo(b.date));
 
                 // Calculate balance for each day within the last 90 days
                 List<FlSpot> balanceSpots = [];
@@ -280,7 +281,10 @@ class _FLChartState extends State<FLChart> {
                 double maxY = calculateMaxY(last90DaysTransactions);
                 double minY = -maxY * 1.1;
 
-                log("----------end------>>");
+                for (var elements in last90DaysTransactions) {
+                  log(elements.date.toString());
+                }
+
                 return LineChart(
                   swapAnimationCurve: Curves.bounceIn,
                   swapAnimationDuration: const Duration(seconds: 2),

@@ -51,6 +51,7 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
     on<DeleteTransaction>((event, emit) async {
       final transactionlist =
           await tranScationDBSevice.deleteTranScation(event.transactionid);
+      emit(state.copyWith(transactionList: transactionlist));
 
       // emit(state.copyWith(flSpot: flSpotList));
 
