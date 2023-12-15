@@ -281,10 +281,6 @@ class _FLChartState extends State<FLChart> {
                 double maxY = calculateMaxY(last90DaysTransactions);
                 double minY = -maxY * 1.1;
 
-                for (var elements in last90DaysTransactions) {
-                  log(elements.date.toString());
-                }
-
                 return LineChart(
                   swapAnimationCurve: Curves.bounceIn,
                   swapAnimationDuration: const Duration(seconds: 2),

@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
@@ -26,6 +26,14 @@ class _HomeScreenState extends State<HomeScreen>
     BlocProvider.of<TransactionBloc>(context).add(GetTranscation());
 
     // Listen for tab changes
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    if (_tabController != null) {
+      _tabController!.dispose();
+    }
   }
 
   @override

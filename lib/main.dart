@@ -11,6 +11,7 @@ import 'package:money_manager/pages/homelayout/homelayout.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pages/create.transaction/create.transaction.dart';
+import 'pages/welcome.screem/introscreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,10 +71,11 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: false,
           ),
-          initialRoute: "/",
+          initialRoute: "intro_screen",
           routes: {
             "/": (context) => HomeLayout(),
             "create_transaction": (context) => TranScationScreeen(),
+            "intro_screen": (context) => const IntroScreen(),
           }),
     );
   }
